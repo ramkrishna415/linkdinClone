@@ -1,0 +1,101 @@
+.container{
+    padding: 1.3rem;
+    background: rgb(252, 245, 245);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+.backDropContainer{
+    width: 100%;
+    height: 30vh;
+    background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1920&q=80");
+     background-size: cover;
+background-repeat: no-repeat;
+position: relative;
+border-radius: 20px;
+
+}
+.backDropContainer img{
+    width: 8vw;
+    height: 16vh;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -32%;
+    left: 7%;
+    text-align: center;
+
+}
+
+
+.profileContainer_detail{
+    padding-top: 3.9rem;
+}
+
+
+
+.card{
+    display: flex;
+    align-items: center;
+    gap:1.4rem;
+
+}
+
+.card_profileContainer{
+display: flex;
+}
+.card_profileContainer >img{
+   width: 3.4rem;
+   height: auto;
+  height: 3.4;
+   object-fit: cover;
+}
+
+
+.connectBtn{
+    padding-inline: 0.8rem;
+    padding-block: 0.3rem;
+    background-color: rgb(89, 89, 102);
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 18px;
+    cursor: pointer;
+}
+
+
+
+.workhistory_container{
+    display: flex;
+    gap: 1.4rem;
+    padding-top: 1.5rem;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.workHistoryCard{
+    min-width: fit-content;
+    padding-inline: 2.5rem;
+    padding-block: 1rem;
+    border-radius: 10px;
+    box-shadow: 18px 10px 15px rgb(171,173,173);
+}
+.profileContainer_flex
+{
+display:flex;
+gap:0.7rem; 
+}
+
+@media only screen and (max-width: 600px){
+.profileContainer_flex{
+   
+    flex-direction: column;
+}
+.profileContainer_flex > div {
+    width: 100%;
+  }
+
+}
+ 

@@ -1,0 +1,28 @@
+.userCard{
+  display: flex; 
+  width: 100%;
+  gap: 1.2rem; 
+  padding: 1.3rem;
+  align-items: center;
+  box-shadow: 10px 10px 10px 0px rgba(179, 153, 153, 0.747)
+
+}
+
+.profilePicture >img{
+    width:3.6rem;
+    border-radius: 50%;
+}
+
+.connectedButton{
+  padding-inline: 0.8rem;
+  padding-block: 0.3rem;
+  border:1px solid rgba(3,91,183);
+  outline:none;
+  color: rgb(87, 87, 245);
+  border-radius: 10px;
+  cursor: pointer;
+
+  
+
+  
+}

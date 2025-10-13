@@ -1,0 +1,10 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/Discover": "pages/Discover.js",
+  "/view_profile/[username]": "pages/view_profile/[username].js",
+  "/profile": "pages/profile.js",
+  "/my_Connection": "pages/my_Connection.js",
+  "/dashboard": "pages/dashboard.js"
+}
