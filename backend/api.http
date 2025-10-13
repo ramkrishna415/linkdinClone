@@ -1,0 +1,83 @@
+
+POST http://localhost:9080/register HTTP/1.1
+Content-Type: application/json
+
+
+{                      
+    "username": "testt",
+    "password": "password1",
+    "email": "testt@",
+    "name": "upadhyaya"
+}
+
+
+###
+
+
+POST http://localhost:9080/login
+Content-Type: application/json
+
+
+{                      
+    
+     "email": "testt@",
+    "password": "password1"
+   
+    
+}
+
+###
+GET  http://localhost:9080/get_user_and_profile
+Content-Type: application/json
+
+
+{                      
+    
+     
+   "token":"975a2c973db814571d779a069c28e31d658164de4b9636d5eb9feb821c917ffd"
+
+}
+
+
+
+###
+POST http://localhost:9080/update_profile_data
+Content-Type: application/json
+
+
+{                      
+    
+     
+   "token":"1f01cc67057370b4917e3bf5f9335c2818b41fe5ad183cc32f02e1eed328e005",
+   "bio":"Hey i am r k up , i am from buxar ",
+   "currentPost":"CTO",
+   "pastWork":[
+    {
+        "company":"microsoft",
+        "position":"cto",
+        "years":"4"
+    }
+   ],
+   "education":[
+    {
+        "school":"Aditya college of engineering",
+        "degree":"B.Tech",
+        "fieldOfStudy":"2022-2026"
+    }
+   ]
+
+   
+}
+
+
+###
+
+GET  http://localhost:9080/get_all_user_profile
+Content-Type: application/json
+
+
+{                      
+    
+     
+  }
+
