@@ -27,7 +27,17 @@ const [userProfile, setUserProfile]=useState({
 })
  const [userPosts, setUserPosts]=useState([]) 
 const [isModalOpen ,setIsModalOpen]=useState(false);
+const [isModalOpens ,setIsModalOpens]=useState(false);
+
 const [inputData, setInputData] = useState({company:'',position:'',years:''});
+
+ const [inputDatas, setInputDatas] = useState({school:'',degree:'',fieldOfStudy:''});
+
+ const handleWorkInputChanges = (e)=>{
+const {name, value}=e.target;
+setInputDatas({...inputDatas,[name]:value})
+ }
+
  const handleWorkInputChange = (e)=>{
 const {name, value}=e.target;
 setInputData({...inputData,[name]:value})
@@ -79,6 +89,8 @@ const updateProfileData = async ()=>{
     });
     dispatch(getAboutUser({token:localStorage.getItem("token")}));
 }
+
+
 
   return (
     <UserLayout>
@@ -172,6 +184,31 @@ const updateProfileData = async ()=>{
            }}>Add Work</button>
               </div>
         </div>
+                  
+
+
+                   <div className="workhistory">
+          <p>Education</p>
+              <div className={styles.workhistory_container}>
+                {
+                  userProfile.education.map((education,index)=>{
+                    return(
+                      <div key={index} className={styles.workHistoryCard}>
+                        <p style={{fontWeight:"bold",display:"flex",alignItems:"center",gap:"0.8rem"}}>{education.school}
+
+                        </p>
+                        <p>{education.degree}</p>
+                        <p>{education.fieldOfStudy}</p>
+
+                      </div>
+                    )
+                  })
+                }
+           <button className={styles.addWorkButton} onClick={()=>{
+            setIsModalOpens(true)
+           }}>Add education</button>
+              </div>
+        </div>
 
            {userProfile != authState.user && 
            <div onClick={()=>{
@@ -212,6 +249,35 @@ const updateProfileData = async ()=>{
 
              </div>
             }
+
+            {/* this is used for add education  */}
+
+               
+                   {
+            isModalOpens &&
+             <div onClick={()=>{
+              setIsModalOpens(false);
+             }}
+              className={styles.currentContainer}>
+
+               <div  onClick={(e)=>{
+                e.stopPropagation()
+               }}
+                className={styles.allCurrentContainer}>
+                     
+                <input onChange={handleWorkInputChanges} name='school' className={styles.inputField} type="text" placeholder='Enter school' />
+                <input onChange={handleWorkInputChanges} name='degree' className={styles.inputField} type="text" placeholder='Enter degree' />
+                <input onChange={handleWorkInputChanges} name='fieldOfStudy' className={styles.inputField} type="number" placeholder='Enter fieldOfStudy' />
+                 <div onClick={()=>{
+                    setUserProfile({...userProfile,education:[...userProfile.education,inputDatas]})
+                    setIsModalOpens(false);
+                 }} className={styles.updateButton}>Add Education</div>
+               </div>
+
+             </div>
+            }
+
+
 
 
        </DashboardLayout>
